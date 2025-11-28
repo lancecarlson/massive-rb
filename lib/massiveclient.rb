@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "polygonio/version"
+require "massiveclient/version"
 
 require "eventmachine"
 require "faraday"
@@ -10,6 +10,6 @@ require "dry-types"
 require "permessage_deflate"
 require "websocket/driver"
 
-require "polygonio/types"
-require "polygonio/rest"
-require "polygonio/websocket"
+require "massiveclient/types"
+require "massiveclient/rest"
+require "massiveclient/websocket"

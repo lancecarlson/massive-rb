@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Polygonio
+module MassiveClient
   module Rest
     class PolygonResponse < Dry::Struct
       NUMBERS_TO_WORDS = {

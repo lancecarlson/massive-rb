@@ -2,23 +2,23 @@
 
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "polygonio/version"
+require "massiveclient/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "polygonio"
-  spec.version       = Polygonio::VERSION
+  spec.name          = "massiveclient"
+  spec.version       = MassiveClient::VERSION
   spec.authors       = ["Lance Carlson"]
   spec.email         = ["lancecarlson@gmail.com"]
 
   spec.license       = "MIT"
 
-  spec.summary       = "Client library for polygon.io. Polygon IO is an API for market data."
-  spec.description   = "Client library for polygon.io's REST and Websocket API's. Polygon IO is an API for market data."
+  spec.summary       = "Client library for Massive.com (formerly Polygon.io). Massive is an API for real-time and historical market data."
+  spec.description   = "Client library for Massive.com's REST and Websocket API's. Massive (formerly Polygon.io) is an API for real-time and historical market data for stocks, crypto, and forex."
 
   spec.metadata = {
-    "homepage_uri" => "https://github.com/lancecarlson/polygonio-rb",
-    "source_code_uri" => "https://github.com/lancecarlson/polygonio-rb",
-    "bug_tracker_uri" => "https://github.com/lancecarlson/polygonio-rb/issues"
+    "homepage_uri" => "https://github.com/lancecarlson/massive-rb",
+    "source_code_uri" => "https://github.com/lancecarlson/massive-rb",
+    "bug_tracker_uri" => "https://github.com/lancecarlson/massive-rb/issues"
   }
 
   # Specify which files should be added to the gem when it is released.

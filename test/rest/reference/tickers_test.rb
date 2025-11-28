@@ -4,7 +4,7 @@ require "test_helper"
 
 class ReferenceTickersTest < Minitest::Test
   def setup
-    @client = Polygonio::Rest::Client.new(api_key) do |builder|
+    @client = MassiveClient::Rest::Client.new(api_key) do |builder|
       # builder.response :logger, nil, { headers: true, bodies: true }
     end
   end

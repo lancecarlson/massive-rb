@@ -4,6 +4,6 @@ require "test_helper"
 
 class WebsocketTest < Minitest::Test
   def setup
-    @client = Polygonio::Websocket::Client.new(api_key)
+    @client = MassiveClient::Websocket::Client.new(api_key)
   end
 end

@@ -4,7 +4,7 @@ require "test_helper"
 
 class CryptoTest < Minitest::Test
   def setup
-    @client = Polygonio::Rest::Client.new(api_key)
+    @client = MassiveClient::Rest::Client.new(api_key)
   end
 
   def test_list

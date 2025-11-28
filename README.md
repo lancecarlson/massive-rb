@@ -24,7 +24,7 @@ This is a client library for Massive.com's market data API. Please see [Massive.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'polygonio'
+gem 'massiveclient'
 ```
 
 And then execute:
@@ -36,12 +36,12 @@ And then execute:
 
 **Create an instance of the client:**
 
-All methods follow the documentation found [here]:https://polygon.io/docs pretty closely:
+All methods follow the documentation found at [Massive.com API Docs](https://massive.com/docs):
 
 
 
 ```ruby
-client = Polygonio::Rest::Client.new(api_key)
+client = MassiveClient::Rest::Client.new(api_key)
 
 # See tests for a full reference of all of methods
 client.reference.tickers.list
@@ -52,7 +52,7 @@ client.forex.historic_ticks
 
 client.crypto.list # list exchanges
 
-Polygonio::Websocket::Client.new("crypto", api_key).subscribe("XQ.BTC-USD") do |event|
+MassiveClient::Websocket::Client.new("crypto", api_key).subscribe("XQ.BTC-USD") do |event|
   pp "Incoming message"
   pp event
 end

@@ -7,6 +7,7 @@ module MassiveClient
 
       class AuthTimeoutError < PolygonWebsocketClientError; end
       class NotAuthorizedError < PolygonWebsocketClientError; end
+
       class UnrecognizedEventError < PolygonWebsocketClientError
         attr_reader :event
 

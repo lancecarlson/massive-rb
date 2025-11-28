@@ -30,21 +30,22 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "activesupport", "~> 7.0"
-  spec.add_runtime_dependency "dry-struct", ["~> 1.2", ">= 1.2.0"]
-  spec.add_runtime_dependency "dry-types", ["~> 1.2", ">= 1.2.2"]
-  spec.add_runtime_dependency "eventmachine", ["~> 1.2", ">= 1.2.7"]
-  spec.add_runtime_dependency "faraday", "~> 2.0"
-  spec.add_runtime_dependency "faraday-retry", "~> 2.0"
-  spec.add_runtime_dependency "oj", ["~> 3.10", ">= 3.10.1"]
-  spec.add_runtime_dependency "permessage_deflate", ["~> 0.1", ">= 0.1.4"]
-  spec.add_runtime_dependency "websocket-driver", ["~> 0.7", ">= 0.7.1"]
+  spec.add_runtime_dependency "activesupport", ">= 7.0"
+  spec.add_runtime_dependency "dry-struct", ">= 1.2"
+  spec.add_runtime_dependency "dry-types", ">= 1.2"
+  spec.add_runtime_dependency "eventmachine", ">= 1.2"
+  spec.add_runtime_dependency "faraday", ">= 2.0"
+  spec.add_runtime_dependency "faraday-retry", ">= 2.0"
+  spec.add_runtime_dependency "oj", ">= 3.10"
+  spec.add_runtime_dependency "permessage_deflate", ">= 0.1"
+  spec.add_runtime_dependency "websocket-driver", ">= 0.7"
 
   spec.add_development_dependency "bundler", ">= 2.3"
-  spec.add_development_dependency "dotenv", "~> 2.7"
-  spec.add_development_dependency "faker", "~> 2.11"
-  spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rubocop", "~> 1.50"
-  spec.add_development_dependency "vcr", "~> 5.1"
+  spec.add_development_dependency "dotenv", ">= 2.7"
+  spec.add_development_dependency "faker", ">= 2.11"
+  spec.add_development_dependency "minitest", ">= 5.0"
+  spec.add_development_dependency "rake", ">= 13.0"
+  spec.add_development_dependency "rubocop", ">= 1.50"
+  spec.add_development_dependency "rubocop-performance", ">= 1.11"
+  spec.add_development_dependency "vcr", ">= 5.1"
 end

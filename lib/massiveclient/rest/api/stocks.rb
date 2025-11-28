@@ -290,7 +290,8 @@ module MassiveClient
         to = Types::JSON::Date[to]
         unadjusted = Types::Bool[unadjusted]
 
-        res = client.request.get("/v2/aggs/ticker/#{ticker}/range/#{multiplier}/#{timespan}/#{from}/#{to}", { unadjusted: unadjusted })
+        res = client.request.get("/v2/aggs/ticker/#{ticker}/range/#{multiplier}/#{timespan}/#{from}/#{to}",
+                                 { unadjusted: unadjusted })
         AggregatesResponse[res.body]
       end
 
@@ -319,7 +320,8 @@ module MassiveClient
         date = Types::JSON::Date[date]
         unadjusted = Types::Bool[unadjusted]
 
-        res = client.request.get("/v2/aggs/grouped/locale/#{locale}/market/#{market.upcase}/#{date}", { unadjusted: unadjusted })
+        res = client.request.get("/v2/aggs/grouped/locale/#{locale}/market/#{market.upcase}/#{date}",
+                                 { unadjusted: unadjusted })
         GroupedDailyResponse[res.body]
       end
     end

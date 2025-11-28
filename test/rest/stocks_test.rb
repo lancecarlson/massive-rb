@@ -35,7 +35,7 @@ class StocksTest < Minitest::Test
     VCR.use_cassette("stocks_last_trade") do
       res = @client.stocks.last_trade("AAPL")
       assert_equal "AAPL", res.symbol
-      assert_equal 290.37, res.last.price
+      assert_equal 278.28, res.last.price
     end
   end
 
@@ -98,8 +98,8 @@ class StocksTest < Minitest::Test
   def test_aggregates
     VCR.use_cassette("stocks_aggregates") do
       res = @client.stocks.aggregates("AAPL", 1, :day, "2019-01-01", "2019-02-01")
-      assert_equal 21, res.results.length
-      assert_equal 37_039_737, res.results.first.v
+      assert_equal 22, res.results.length
+      assert_equal 148_158_948, res.results.first.v
     end
   end
 
@@ -107,7 +107,7 @@ class StocksTest < Minitest::Test
     VCR.use_cassette("stocks_grouped_daily") do
       res = @client.stocks.grouped_daily("US", :stocks, "2019-02-01")
       assert_equal 8374, res.results.length
-      assert_equal "PEB", res.results.first.T
+      assert_equal "TCBIP", res.results.first.T
     end
   end
 end

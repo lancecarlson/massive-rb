@@ -15,7 +15,7 @@ http_interactions:
       message: Forbidden
     headers:
       date:
-      - Fri, 28 Nov 2025 18:25:20 GMT
+      - Fri, 28 Nov 2025 19:04:34 GMT
       content-type:
       - application/json
       content-length:
@@ -23,13 +23,13 @@ http_interactions:
       connection:
       - keep-alive
       x-request-id:
-      - 40b11e739959de25ed1e21f5ca0b39ce
+      - f47c57b3a1f058165de7f684882653c2
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"status":"NOT_AUTHORIZED","request_id":"40b11e739959de25ed1e21f5ca0b39ce","message":"You
+      string: '{"status":"NOT_AUTHORIZED","request_id":"f47c57b3a1f058165de7f684882653c2","message":"You
         are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
     http_version:
-  recorded_at: Fri, 28 Nov 2025 18:25:20 GMT
+  recorded_at: Fri, 28 Nov 2025 19:04:34 GMT
 recorded_with: VCR 5.1.0

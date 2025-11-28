@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 28 Nov 2025 18:25:20 GMT
+      - Fri, 28 Nov 2025 19:04:34 GMT
       content-type:
       - application/json
       content-length:
@@ -29,12 +29,12 @@ http_interactions:
       x-polygon-cluster-name:
       - polygon-ny5
       x-request-id:
-      - b82929fefd2fe0563c875dca6e73e15f
+      - 06253de244f4ecab23814ab4aa3f1062
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: ASCII-8BIT
       string: '{"symbol":"BTC-USD","isUTC":true,"day":"2019-04-28T00:00:00Z","open":5294.22,"close":5308.69,"openTrades":[{"x":10,"p":5294.22,"s":0.06058,"c":[1],"i":"529113091","t":1556409600902},{"x":10,"p":5294.22,"s":0.037,"c":[1],"i":"529113104","t":1556409601185},{"x":10,"p":5294.23,"s":0.00531,"c":[1],"i":"529113116","t":1556409601425},{"x":10,"p":5294.24,"s":0.00982,"c":[1],"i":"529113127","t":1556409601898},{"x":2,"p":5401.8,"s":0.01310432,"c":[1],"i":"352806492","t":1556409602216}],"closingTrades":[{"x":10,"p":5308.69,"s":0.00057,"c":[2],"i":"529935505","t":1556495996085},{"x":10,"p":5308.58,"s":0.00059,"c":[2],"i":"529935504","t":1556495996085},{"x":10,"p":5308.47,"s":0.0006,"c":[2],"i":"529935498","t":1556495995505},{"x":10,"p":5308.36,"s":0.00062,"c":[2],"i":"529935497","t":1556495995487},{"x":10,"p":5308.25,"s":0.00064,"c":[2],"i":"529935496","t":1556495995487}]}'
     http_version:
-  recorded_at: Fri, 28 Nov 2025 18:25:20 GMT
+  recorded_at: Fri, 28 Nov 2025 19:04:34 GMT
 recorded_with: VCR 5.1.0

@@ -11,15 +11,15 @@ http_interactions:
       - Faraday v2.14.0
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
     headers:
       date:
-      - Fri, 28 Nov 2025 18:25:14 GMT
+      - Fri, 28 Nov 2025 19:04:31 GMT
       content-type:
       - application/json
       content-length:
-      - '192'
+      - '159'
       connection:
       - keep-alive
       content-encoding:
@@ -29,14 +29,12 @@ http_interactions:
       x-polygon-cluster-name:
       - polygon-ny5
       x-request-id:
-      - c32855b6b7f441554e43d207e5b41bd1
+      - c00b350827109ab3d2dc6dc932fc0b2c
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"NOT_AUTHORIZED","request_id":"c32855b6b7f441554e43d207e5b41bd1","message":"Attempted
-        to request data past historical entitlements. Please upgrade your plan at
-        https://polygon.io/pricing"}'
+      string: '{"status":"OK","from":"2018-03-02","symbol":"AAPL","open":43.2,"high":44.075,"low":43.1125,"close":44.0525,"volume":1.538158e+08,"afterHours":44.0125,"preMarket":43.5925}'
     http_version:
-  recorded_at: Fri, 28 Nov 2025 18:25:14 GMT
+  recorded_at: Fri, 28 Nov 2025 19:04:31 GMT
 recorded_with: VCR 5.1.0

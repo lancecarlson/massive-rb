@@ -11,25 +11,27 @@ http_interactions:
       - Faraday v2.14.0
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 404
+      message: Not Found
     headers:
       date:
-      - Fri, 28 Nov 2025 18:25:14 GMT
+      - Fri, 28 Nov 2025 19:04:33 GMT
       content-type:
-      - application/json
+      - application/json; charset=utf-8
       content-length:
-      - '177'
+      - '171'
       connection:
       - keep-alive
+      x-polygon-deprecated-new-location:
+      - https://polygon.io/docs/stocks/get_v3_trades__stockticker
       x-request-id:
-      - 315712c1aab1ac6d84b3efe30fba3f86
+      - c171675824c3d8001ed7b4fa8addf0df
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"status":"NOT_AUTHORIZED","request_id":"315712c1aab1ac6d84b3efe30fba3f86","message":"You
-        are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
+      string: '{"error":"The API you are requesting has been deprecated. Please refer
+        to https://polygon.io/docs/stocks/get_v3_trades__stockticker for the new endpoint","status":"ERROR"}'
     http_version:
-  recorded_at: Fri, 28 Nov 2025 18:25:14 GMT
+  recorded_at: Fri, 28 Nov 2025 19:04:33 GMT
 recorded_with: VCR 5.1.0

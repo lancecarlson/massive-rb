@@ -11,25 +11,32 @@ http_interactions:
       - Faraday v2.14.0
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
     headers:
       date:
-      - Fri, 28 Nov 2025 18:25:13 GMT
+      - Fri, 28 Nov 2025 19:04:33 GMT
       content-type:
-      - application/json
+      - application/json; charset=utf-8
       content-length:
-      - '177'
+      - '176'
       connection:
       - keep-alive
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+      x-polygon-cluster-name:
+      - polygon-ny5
+      x-polygon-deprecated-new-location:
+      - https://polygon.io/docs/stocks/get_v2_last_trade__stocksticker
       x-request-id:
-      - 07ef616509fdc281b87f1ff2e114b92e
+      - 4420d0c9db6f41bd1ca43543478d6704
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"status":"NOT_AUTHORIZED","request_id":"07ef616509fdc281b87f1ff2e114b92e","message":"You
-        are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
+      string: '{"last":{"cond1":12,"cond2":37,"cond3":41,"exchange":8,"price":278.28,"size":1,"timestamp":1764355760043},"request_id":"4420d0c9db6f41bd1ca43543478d6704","status":"DELAYED","symbol":"AAPL"}'
     http_version:
-  recorded_at: Fri, 28 Nov 2025 18:25:13 GMT
+  recorded_at: Fri, 28 Nov 2025 19:04:33 GMT
 recorded_with: VCR 5.1.0

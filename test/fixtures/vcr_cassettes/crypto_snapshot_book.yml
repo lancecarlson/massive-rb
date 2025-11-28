@@ -15,7 +15,7 @@ http_interactions:
       message: Not Found
     headers:
       date:
-      - Fri, 28 Nov 2025 18:25:25 GMT
+      - Fri, 28 Nov 2025 19:04:34 GMT
       content-type:
       - text/plain
       content-length:
@@ -23,12 +23,12 @@ http_interactions:
       connection:
       - keep-alive
       x-request-id:
-      - c97fdab2d49d7f27191c75aeb16465ac
+      - 8084167536fe7f6f7906cf0944980bd0
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
       string: 404 page not found
     http_version:
-  recorded_at: Fri, 28 Nov 2025 18:25:25 GMT
+  recorded_at: Fri, 28 Nov 2025 19:04:34 GMT
 recorded_with: VCR 5.1.0

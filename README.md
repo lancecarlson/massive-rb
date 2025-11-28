@@ -1,14 +1,23 @@
-# Polygonio (Ruby)
+# Massive (Ruby)
+
+Ruby client library for Massive.com (formerly Polygon.io) - Real-time and historical market data for stocks, crypto, and forex.
 
 ## Table of Contents
 
 - [Background](#background)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Ruby Support](#ruby-support)
 
 ## Background
 
-This is a client library for Polygon.io. Please see [Polygon.io](https://polygon.io)
+This is a client library for Massive.com's market data API. Please see [Massive.com](https://massive.com) for full API documentation.
+
+## Ruby Support
+
+- Ruby 3.4+ supported
+- Uses Faraday 2.x for HTTP requests
+- ActiveSupport 7.x
 
 ## Installation
 

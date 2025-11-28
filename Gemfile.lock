@@ -2,13 +2,12 @@ PATH
   remote: .
   specs:
     polygonio (0.2.4)
-      activesupport (~> 6.0, >= 6.0.2.2)
+      activesupport (~> 7.0)
       dry-struct (~> 1.2, >= 1.2.0)
       dry-types (~> 1.2, >= 1.2.2)
       eventmachine (~> 1.2, >= 1.2.7)
-      faraday (~> 0.17, >= 0.17.3)
-      faraday_middleware (~> 0.13, >= 0.13.1)
-      faraday_middleware-parse_oj (~> 0.3, >= 0.3.2)
+      faraday (~> 2.0)
+      faraday-retry (~> 2.0)
       oj (~> 3.10, >= 3.10.1)
       permessage_deflate (~> 0.1, >= 0.1.4)
       websocket-driver (~> 0.7, >= 0.7.1)
@@ -16,103 +15,177 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.0)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
+    activesupport (7.2.3)
+      base64
+      benchmark (>= 0.3)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.3.1)
+      connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
+      logger (>= 1.4.2)
       minitest (>= 5.1)
-      tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
-    ast (2.4.0)
-    bundler-audit (0.6.1)
-      bundler (>= 1.2.0, < 3)
-      thor (~> 0.18)
-    concurrent-ruby (1.1.6)
-    dotenv (2.7.5)
-    dry-configurable (0.12.0)
+      securerandom (>= 0.3)
+      tzinfo (~> 2.0, >= 2.0.5)
+    ast (2.4.3)
+    base64 (0.3.0)
+    benchmark (0.5.0)
+    bigdecimal (3.3.1)
+    concurrent-ruby (1.3.5)
+    connection_pool (2.5.5)
+    dotenv (2.8.1)
+    drb (2.2.3)
+    dry-core (1.1.0)
       concurrent-ruby (~> 1.0)
-      dry-core (~> 0.5, >= 0.5.0)
-    dry-container (0.7.2)
+      logger
+      zeitwerk (~> 2.6)
+    dry-inflector (1.2.0)
+    dry-logic (1.6.0)
+      bigdecimal
       concurrent-ruby (~> 1.0)
-      dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.5.0)
-      concurrent-ruby (~> 1.0)
-    dry-equalizer (0.3.0)
-    dry-inflector (0.2.0)
-    dry-logic (1.1.0)
-      concurrent-ruby (~> 1.0)
-      dry-core (~> 0.5, >= 0.5)
-    dry-struct (1.3.0)
-      dry-core (~> 0.4, >= 0.4.4)
-      dry-equalizer (~> 0.3)
-      dry-types (~> 1.3)
+      dry-core (~> 1.1)
+      zeitwerk (~> 2.6)
+    dry-struct (1.8.0)
+      dry-core (~> 1.1)
+      dry-types (~> 1.8, >= 1.8.2)
       ice_nine (~> 0.11)
-    dry-types (1.4.0)
+      zeitwerk (~> 2.6)
+    dry-types (1.8.3)
+      bigdecimal (~> 3.0)
       concurrent-ruby (~> 1.0)
-      dry-container (~> 0.3)
-      dry-core (~> 0.4, >= 0.4.4)
-      dry-equalizer (~> 0.3)
-      dry-inflector (~> 0.1, >= 0.1.2)
-      dry-logic (~> 1.0, >= 1.0.2)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
     eventmachine (1.2.7)
-    faker (2.11.0)
-      i18n (>= 1.6, < 2)
-    faraday (0.17.3)
-      multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.14.0)
-      faraday (>= 0.7.4, < 1.0)
-    faraday_middleware-parse_oj (0.3.2)
-      faraday (~> 0.9)
-      faraday_middleware (>= 0.9.1, < 1.0)
-      oj (>= 2.0, < 4.0)
-    i18n (1.8.2)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
+    faraday (2.14.0)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
+    faraday-retry (2.3.2)
+      faraday (~> 2.0)
+    i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    jaro_winkler (1.5.4)
-    minitest (5.14.0)
-    multipart-post (2.1.1)
-    oj (3.10.18)
-    parallel (1.19.1)
-    parser (2.7.0.5)
-      ast (~> 2.4.0)
+    json (2.16.0)
+    language_server-protocol (3.17.0.5)
+    lint_roller (1.1.0)
+    logger (1.7.0)
+    minitest (5.26.2)
+    net-http (0.8.0)
+      uri (>= 0.11.1)
+    oj (3.16.12)
+      bigdecimal (>= 3.0)
+      ostruct (>= 0.2)
+    ostruct (0.6.3)
+    parallel (1.27.0)
+    parser (3.3.10.0)
+      ast (~> 2.4.1)
+      racc
     permessage_deflate (0.1.4)
-    rainbow (3.0.0)
-    rake (13.0.1)
-    rexml (3.2.4)
-    rubocop (0.80.1)
-      jaro_winkler (~> 1.5.1)
+    prism (1.6.0)
+    racc (1.8.1)
+    rainbow (3.1.1)
+    rake (13.3.1)
+    regexp_parser (2.11.3)
+    rubocop (1.81.7)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
       parallel (~> 1.10)
-      parser (>= 2.7.0.1)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      rexml
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.47.1, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.7)
-    rubocop-performance (1.5.2)
-      rubocop (>= 0.71.0)
-    ruby-progressbar (1.10.1)
-    thor (0.20.3)
-    tzinfo (2.0.4)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.48.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
+    ruby-progressbar (1.13.0)
+    securerandom (0.4.1)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (1.6.1)
+    unicode-display_width (3.2.0)
+      unicode-emoji (~> 4.1)
+    unicode-emoji (4.1.0)
+    uri (1.1.1)
     vcr (5.1.0)
-    websocket-driver (0.7.3)
+    websocket-driver (0.8.0)
+      base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.4.2)
+    zeitwerk (2.7.3)
 
 PLATFORMS
+  arm64-darwin-24
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.0)
-  bundler-audit (~> 0.6)
+  bundler (>= 2.3)
   dotenv (~> 2.7)
   faker (~> 2.11)
   minitest (~> 5.0)
   polygonio!
   rake (~> 13.0)
-  rubocop (~> 0.80)
-  rubocop-performance (~> 1.5)
+  rubocop (~> 1.50)
   vcr (~> 5.1)
 
+CHECKSUMS
+  activesupport (7.2.3) sha256=5675c9770dac93e371412684249f9dc3c8cec104efd0624362a520ae685c7b10
+  ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
+  bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
+  concurrent-ruby (1.3.5) sha256=813b3e37aca6df2a21a3b9f1d497f8cbab24a2b94cab325bffe65ee0f6cbebc6
+  connection_pool (2.5.5) sha256=e54ff92855753df1fd7c59fa04a398833355f27dd14c074f8c83a05f72a716ad
+  dotenv (2.8.1) sha256=c5944793349ae03c432e1780a2ca929d60b88c7d14d52d630db0508c3a8a17d8
+  drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
+  dry-core (1.1.0) sha256=0903821a9707649a7da545a2cd88e20f3a663ab1c5288abd7f914fa7751ab195
+  dry-inflector (1.2.0) sha256=22f5d0b50fd57074ae57e2ca17e3b300e57564c218269dcf82ff3e42d3f38f2e
+  dry-logic (1.6.0) sha256=da6fedbc0f90fc41f9b0cc7e6f05f5d529d1efaef6c8dcc8e0733f685745cea2
+  dry-struct (1.8.0) sha256=74c38b559924fb6462ac43ec780c4533a082d7b1d238a8d7857b773b3b8e2966
+  dry-types (1.8.3) sha256=b5d97a45e0ed273131c0c3d5bc9f5633c2d1242e092ee47401ce7d5eab65c1bc
+  eventmachine (1.2.7) sha256=994016e42aa041477ba9cff45cbe50de2047f25dd418eba003e84f0d16560972
+  faker (2.23.0) sha256=8754e4bb3bc45641d276123060286a001ea5fa49a4b5daa162bf8c015fe154f3
+  faraday (2.14.0) sha256=8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd
+  faraday-net_http (3.4.2) sha256=f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c
+  faraday-retry (2.3.2) sha256=2402d2029032ebd238a2046221e67f6ef0da78c5a8ce8cd4f8b9c62e4d6451d1
+  i18n (1.14.7) sha256=ceba573f8138ff2c0915427f1fc5bdf4aa3ab8ae88c8ce255eb3ecf0a11a5d0f
+  ice_nine (0.11.2) sha256=5d506a7d2723d5592dc121b9928e4931742730131f22a1a37649df1c1e2e63db
+  json (2.16.0) sha256=ca5630320bb5ca23ebfd0bac84532fab56eb357575653b815b9df42c051e1525
+  language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
+  lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
+  minitest (5.26.2) sha256=f021118a6185b9ba9f5af71f2ba103ad770c75afde9f2ab8da512677c550cde3
+  net-http (0.8.0) sha256=df42c47ce9f9e95ad32a317c97c12f945bc1af365288837ea4ff259876ecb46d
+  oj (3.16.12) sha256=ad9fad6a06dabcf4cfe6a420690a4375377685c16eee0ae88e8d38a43ed7b556
+  ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
+  parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
+  parser (3.3.10.0) sha256=ce3587fa5cc55a88c4ba5b2b37621b3329aadf5728f9eafa36bbd121462aabd6
+  permessage_deflate (0.1.4) sha256=c3f05a94f98994aa1a47589b0f33e94d86fc10c944efa0f6ab3666e37e343373
+  polygonio (0.2.4)
+  prism (1.6.0) sha256=bfc0281a81718c4872346bc858dc84abd3a60cae78336c65ad35c8fbff641c6b
+  racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
+  rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
+  rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
+  regexp_parser (2.11.3) sha256=ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4
+  rubocop (1.81.7) sha256=6fb5cc298c731691e2a414fe0041a13eb1beed7bab23aec131da1bcc527af094
+  rubocop-ast (1.48.0) sha256=22df9bbf3f7a6eccde0fad54e68547ae1e2a704bf8719e7c83813a99c05d2e76
+  ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
+  securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
+  tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
+  unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
+  unicode-emoji (4.1.0) sha256=4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5
+  uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
+  vcr (5.1.0) sha256=38b5f42d8d1119d899b12f15bd46000cff3f18e31800f1c15f713c8bd458bab7
+  websocket-driver (0.8.0) sha256=ed0dba4b943c22f17f9a734817e808bc84cdce6a7e22045f5315aa57676d4962
+  websocket-extensions (0.1.5) sha256=1c6ba63092cda343eb53fc657110c71c754c56484aad42578495227d717a8241
+  zeitwerk (2.7.3) sha256=b2e86b4a9b57d26ba68a15230dcc7fe6f040f06831ce64417b0621ad96ba3e85
+
 BUNDLED WITH
-   2.1.2
+  4.0.0.beta2

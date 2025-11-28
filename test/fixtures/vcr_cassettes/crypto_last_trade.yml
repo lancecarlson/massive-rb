@@ -2,35 +2,34 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/last/crypto/BTC/USD?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/last/crypto/BTC/USD?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 15:32:56 GMT
+      - Fri, 28 Nov 2025 18:25:20 GMT
       content-type:
       - application/json
       content-length:
-      - '173'
+      - '177'
       connection:
-      - close
+      - keep-alive
       x-request-id:
-      - efbffb5c03e3c79522c05c768c23d562, efbffb5c03e3c79522c05c768c23d562
+      - c50cc814f5624b4cbbb77ca77019c3b3
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
-      encoding: ASCII-8BIT
-      string: '{"status":"success","symbol":"BTC-USD","last":{"price":7722.67,"size":0.001999,"exchange":4,"conditions":[1,0,0,0],"timestamp":1588087976176},"lastAverage":{"avg":7724.952,"tradesAveraged":10}}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 15:32:56 GMT
+      encoding: UTF-8
+      string: '{"status":"NOT_AUTHORIZED","request_id":"c50cc814f5624b4cbbb77ca77019c3b3","message":"You
+        are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:20 GMT
 recorded_with: VCR 5.1.0

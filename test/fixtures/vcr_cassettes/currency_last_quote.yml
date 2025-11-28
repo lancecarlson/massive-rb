@@ -2,35 +2,34 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/last_quote/currencies/AUD/USD?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/last_quote/currencies/AUD/USD?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 20:28:40 GMT
+      - Fri, 28 Nov 2025 18:25:18 GMT
       content-type:
       - application/json
       content-length:
-      - '123'
+      - '177'
       connection:
-      - close
+      - keep-alive
       x-request-id:
-      - 2d55d9513dd3139bb7aaeb519c26d043, 2d55d9513dd3139bb7aaeb519c26d043
+      - c6a532cde531931b63c7723f0c506f51
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
-      encoding: ASCII-8BIT
-      string: '{"status":"success","symbol":"AUD/USD","last":{"bid":0.6494,"ask":0.6498,"exchange":48,"timestamp":1588105717000}}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 20:28:40 GMT
+      encoding: UTF-8
+      string: '{"status":"NOT_AUTHORIZED","request_id":"c6a532cde531931b63c7723f0c506f51","message":"You
+        are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:18 GMT
 recorded_with: VCR 5.1.0

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    polygonio (0.2.4)
+    polygonio (0.3.0)
       activesupport (~> 7.0)
       dry-struct (~> 1.2, >= 1.2.0)
       dry-types (~> 1.2, >= 1.2.2)
@@ -168,7 +168,7 @@ CHECKSUMS
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   parser (3.3.10.0) sha256=ce3587fa5cc55a88c4ba5b2b37621b3329aadf5728f9eafa36bbd121462aabd6
   permessage_deflate (0.1.4) sha256=c3f05a94f98994aa1a47589b0f33e94d86fc10c944efa0f6ab3666e37e343373
-  polygonio (0.2.4)
+  polygonio (0.3.0)
   prism (1.6.0) sha256=bfc0281a81718c4872346bc858dc84abd3a60cae78336c65ad35c8fbff641c6b
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a

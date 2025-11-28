@@ -2,30 +2,34 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/meta/symbols/AAPL/company?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/meta/symbols/AAPL/company?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 21:04:59 GMT
+      - Fri, 28 Nov 2025 18:25:13 GMT
       content-type:
       - application/json
-      content-length:
-      - '633'
+      transfer-encoding:
+      - chunked
       connection:
-      - close
+      - keep-alive
+      content-encoding:
+      - gzip
+      x-polygon-cluster-name:
+      - polygon-ny5
+      x-polygon-deprecated-new-location:
+      - https://polygon.io/docs/stocks/get_v3_reference_tickers__ticker
       x-request-id:
-      - 649b40787f9741d22139013f70f5d129, 649b40787f9741d22139013f70f5d129
+      - 8262a6fabb783fb0607b9e5a92274c57
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
@@ -39,6 +43,6 @@ http_interactions:
         Global Select","name":"Apple Inc.","symbol":"AAPL","exchangeSymbol":"NGS","hq_address":"1
         Infinite Loop Cupertino CA, 95014","hq_state":"CA","hq_country":"USA","type":"CS","updated":"11/16/2018","tags":["Technology","Consumer
         Electronics","Computer Hardware"],"similar":["MSFT","NOK","IBM","HPQ","GOOGL","BB","XLK"],"active":true}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 21:04:59 GMT
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:13 GMT
 recorded_with: VCR 5.1.0

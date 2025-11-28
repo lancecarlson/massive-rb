@@ -119,7 +119,7 @@ module Polygonio
     end
 
     class Client
-      BASE_URL = "wss://socket.polygon.io/"
+      BASE_URL = "wss://socket.massive.com/"
 
       def initialize(path, api_key, opts = {})
         path = Types::Coercible::String.enum("stocks", "forex", "crypto")[path]

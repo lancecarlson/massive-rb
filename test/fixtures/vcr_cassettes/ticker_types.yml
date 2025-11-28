@@ -2,45 +2,49 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v2/reference/types?apiKey=<API_KEY>
+    uri: https://api.massive.com/v2/reference/types?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 07:05:23 GMT
+      - Fri, 28 Nov 2025 18:25:13 GMT
       content-type:
       - application/json
-      content-length:
-      - '534'
+      transfer-encoding:
+      - chunked
       connection:
-      - close
+      - keep-alive
+      content-encoding:
+      - gzip
+      x-polygon-cluster-name:
+      - polygon-ny5
       x-request-id:
-      - 0badf99200ad33cabd557f241e0681a3, 0badf99200ad33cabd557f241e0681a3
+      - 25de4dc14b64f205da8664071b655f9c
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"OK","results":{"types":{"CS":"Common Stock","ADR":"American
-        Depository Receipt","NVDR":"Non-Voting Depository Receipt","GDR":"Global Depositary
-        Receipt","SDR":"Special Drawing Right","CEF":"Closed-End Fund","ETP":"Exchange
-        Traded Product/Fund","REIT":"Real Estate Investment Trust","MLP":"Master Limited
-        Partnership","WRT":"Equity WRT","PUB":"Public","NYRS":"New York Registry Shares","UNIT":"Unit","RIGHT":"Right","TRAK":"Tracking
+      string: '{"status":"OK","results":{"types":{"CS":"Common Stock","BOND":"Bond","BASKET":"Basket","ADRC":"American
+        Depository Receipt Common","ADRP":"American Depository Receipt Preferred","ADRW":"American
+        Depository Receipt Warrant","ADRR":"American Depository Receipt Right","NVDR":"Non-Voting
+        Depository Receipt","GDR":"Global Depositary Receipt","SDR":"Special Drawing
+        Right","CEF":"Closed-End Fund","ETP":"Exchange Traded Product/Fund","REIT":"Real
+        Estate Investment Trust","MLP":"Master Limited Partnership","WRT":"Equity
+        WRT","PUB":"Public","NYRS":"New York Registry Shares","UNIT":"Unit","RIGHT":"Right","TRAK":"Tracking
         stock or targeted stock","LTDP":"Limited Partnership","RYLT":"Royalty Trust","MF":"Mutual
         Fund","PFD":"Preferred Stock","FDR":"Foreign Ordinary Shares","OST":"Other
-        Security Type","FUND":"Fund","SP":"Structured Product","SI":"Secondary Issue"},"indexTypes":{"INDEX":"Index","ETF":"Exchange
+        Security Type","FUND":"Fund","SP":"Structured Product","SI":"Secondary Issue","WARRANT":"Warrant"},"indexTypes":{"INDEX":"Index","ETF":"Exchange
         Traded Fund (ETF)","ETN":"Exchange Traded Note (ETN)","ETMF":"Exchange Traded
         Managed Fund (ETMF)","SETTLEMENT":"Settlement","SPOT":"Spot","SUBPROD":"Subordinated
         product","WC":"World Currency","ALPHAINDEX":"Alpha Index"}}}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 07:05:23 GMT
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:13 GMT
 recorded_with: VCR 5.1.0

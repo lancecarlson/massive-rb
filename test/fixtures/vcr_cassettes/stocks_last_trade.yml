@@ -2,37 +2,34 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/last/stocks/AAPL?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/last/stocks/AAPL?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Fri, 01 May 2020 21:57:33 GMT
+      - Fri, 28 Nov 2025 18:25:13 GMT
       content-type:
-      - application/json; charset=utf-8
+      - application/json
       content-length:
-      - '142'
+      - '177'
       connection:
-      - close
+      - keep-alive
       x-request-id:
-      - 9496feee758842836b89c99f705df34c, 9496feee758842836b89c99f705df34c
+      - 07ef616509fdc281b87f1ff2e114b92e
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"last":{"cond1":12,"cond2":37,"cond3":41,"exchange":8,"price":290.37,"size":3,"timestamp":1588370252584},"status":"success","symbol":"AAPL"}
-
-        '
-    http_version: null
-  recorded_at: Fri, 01 May 2020 21:57:33 GMT
+      string: '{"status":"NOT_AUTHORIZED","request_id":"07ef616509fdc281b87f1ff2e114b92e","message":"You
+        are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:13 GMT
 recorded_with: VCR 5.1.0

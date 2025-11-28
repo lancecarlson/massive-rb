@@ -2,35 +2,41 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/open-close/AAPL/2018-03-02?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/open-close/AAPL/2018-03-02?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Fri, 01 May 2020 22:06:11 GMT
+      - Fri, 28 Nov 2025 18:25:14 GMT
       content-type:
       - application/json
       content-length:
-      - '149'
+      - '192'
       connection:
-      - close
+      - keep-alive
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+      x-polygon-cluster-name:
+      - polygon-ny5
       x-request-id:
-      - 6a8e2754099600a9cdb19b9e5497ea5f, 6a8e2754099600a9cdb19b9e5497ea5f
+      - c32855b6b7f441554e43d207e5b41bd1
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"OK","from":"2018-03-02T03:30:00Z","symbol":"AAPL","open":174.37,"high":175.25,"low":172.2,"close":174.62,"afterHours":175.059,"volume":28738984}'
-    http_version: null
-  recorded_at: Fri, 01 May 2020 22:06:11 GMT
+      string: '{"status":"NOT_AUTHORIZED","request_id":"c32855b6b7f441554e43d207e5b41bd1","message":"Attempted
+        to request data past historical entitlements. Please upgrade your plan at
+        https://polygon.io/pricing"}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:14 GMT
 recorded_with: VCR 5.1.0

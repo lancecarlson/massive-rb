@@ -2,35 +2,39 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/open-close/crypto/BTC/USD/2019-04-28?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/open-close/crypto/BTC/USD/2019-04-28?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 15:28:09 GMT
+      - Fri, 28 Nov 2025 18:25:20 GMT
       content-type:
       - application/json
       content-length:
-      - '262'
+      - '306'
       connection:
-      - close
+      - keep-alive
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+      x-polygon-cluster-name:
+      - polygon-ny5
       x-request-id:
-      - 18f3f8f7b361ee4fa72a4bd0d0a0f118, 18f3f8f7b361ee4fa72a4bd0d0a0f118
+      - b82929fefd2fe0563c875dca6e73e15f
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: ASCII-8BIT
-      string: '{"symbol":"BTC-USD","isUTC":true,"day":"2019-4-27","open":5314.51,"close":5294.1,"openTrades":[{"s":0.0045,"p":5314.51,"x":11,"t":1556323200082,"c":[2]},{"s":0.094075,"p":5315,"x":4,"t":1556323200287,"c":[4]},{"s":0.24863,"p":5314.51,"x":10,"t":1556323200326,"c":[2]},{"s":0.04753,"p":5314.12,"x":4,"t":1556323200356,"c":[3]},{"s":0.046674,"p":5315,"x":4,"t":1556323200512,"c":[4]}],"closingTrades":[{"s":0.00068,"p":5294.1,"x":10,"t":1556409599862,"c":[2]},{"s":0.024184,"p":5295.69,"x":4,"t":1556409599301,"c":[4]},{"s":0.002436,"p":5295.69,"x":4,"t":1556409599190,"c":[4]},{"s":0.1,"p":5295.69,"x":4,"t":1556409598531,"c":[4]},{"s":0.352302,"p":5295.69,"x":4,"t":1556409598509,"c":[4]}]}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 15:28:09 GMT
+      string: '{"symbol":"BTC-USD","isUTC":true,"day":"2019-04-28T00:00:00Z","open":5294.22,"close":5308.69,"openTrades":[{"x":10,"p":5294.22,"s":0.06058,"c":[1],"i":"529113091","t":1556409600902},{"x":10,"p":5294.22,"s":0.037,"c":[1],"i":"529113104","t":1556409601185},{"x":10,"p":5294.23,"s":0.00531,"c":[1],"i":"529113116","t":1556409601425},{"x":10,"p":5294.24,"s":0.00982,"c":[1],"i":"529113127","t":1556409601898},{"x":2,"p":5401.8,"s":0.01310432,"c":[1],"i":"352806492","t":1556409602216}],"closingTrades":[{"x":10,"p":5308.69,"s":0.00057,"c":[2],"i":"529935505","t":1556495996085},{"x":10,"p":5308.58,"s":0.00059,"c":[2],"i":"529935504","t":1556495996085},{"x":10,"p":5308.47,"s":0.0006,"c":[2],"i":"529935498","t":1556495995505},{"x":10,"p":5308.36,"s":0.00062,"c":[2],"i":"529935497","t":1556495995487},{"x":10,"p":5308.25,"s":0.00064,"c":[2],"i":"529935496","t":1556495995487}]}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:20 GMT
 recorded_with: VCR 5.1.0

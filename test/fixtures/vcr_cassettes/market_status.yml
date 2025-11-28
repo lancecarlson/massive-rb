@@ -2,39 +2,39 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/marketstatus/now?apiKey=<API_KEY>
+    uri: https://api.massive.com/v1/marketstatus/now?apiKey=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 07:23:51 GMT
+      - Fri, 28 Nov 2025 18:25:13 GMT
       content-type:
       - application/json
       content-length:
-      - '135'
+      - '248'
       connection:
-      - close
-      access-control-allow-credentials:
-      - 'true'
-      access-control-allow-origin:
-      - "*"
+      - keep-alive
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+      x-polygon-cluster-name:
+      - polygon-ny5
       x-request-id:
-      - 5bf69a97379b93002b36ccb1bd41d6f6, 5bf69a97379b93002b36ccb1bd41d6f6
+      - 8d56e0382d352d24ca560afb892e59b9
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: ASCII-8BIT
-      string: '{"market":"closed","serverTime":"2020-04-28T03:23:51-04:00","exchanges":{"nyse":"closed","nasdaq":"closed","otc":"closed"},"currencies":{"fx":"open","crypto":"open"}}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 07:23:51 GMT
+      string: '{"afterHours":true,"currencies":{"crypto":"open","fx":"open"},"earlyHours":false,"exchanges":{"nasdaq":"extended-hours","nyse":"extended-hours","otc":"extended-hours"},"indicesGroups":{"s_and_p":"closed","societe_generale":"closed","msci":"closed","ftse_russell":"closed","mstar":"closed","mstarc":"closed","cccy":"open","cgi":"closed","nasdaq":"closed","dow_jones":"closed"},"market":"extended-hours","serverTime":"2025-11-28T13:25:13-05:00"}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:13 GMT
 recorded_with: VCR 5.1.0

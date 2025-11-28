@@ -2,35 +2,34 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v1/conversion/AUD/USD?amount=0.252e3&apiKey=<API_KEY>&precision=2
+    uri: https://api.massive.com/v1/conversion/AUD/USD?amount=0.252e3&apiKey=<API_KEY>&precision=2
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Tue, 28 Apr 2020 20:14:08 GMT
+      - Fri, 28 Nov 2025 18:25:17 GMT
       content-type:
       - application/json
       content-length:
-      - '155'
+      - '177'
       connection:
-      - close
+      - keep-alive
       x-request-id:
-      - 2098a8d817fad6ce04082be75e02f836, 2098a8d817fad6ce04082be75e02f836
+      - 8440d333789a4163d9fe5a4627b89641
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
-      encoding: ASCII-8BIT
-      string: '{"status":"success","last":{"bid":1.5386983,"ask":1.5396459,"exchange":48,"timestamp":1588104846000},"from":"AUD","to":"USD","initialAmount":252,"converted":163.77}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 20:14:08 GMT
+      encoding: UTF-8
+      string: '{"status":"NOT_AUTHORIZED","request_id":"8440d333789a4163d9fe5a4627b89641","message":"You
+        are not entitled to this data. Please upgrade your plan at https://polygon.io/pricing"}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:17 GMT
 recorded_with: VCR 5.1.0

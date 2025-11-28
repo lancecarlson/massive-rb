@@ -5,7 +5,7 @@ module Polygonio
     class Client
       Struct.new("Reference", :locales, :markets, :stocks, :tickers)
 
-      BASE_URL = "https://api.polygon.io/"
+      BASE_URL = "https://api.massive.com/"
 
       attr_reader :url, :api_key
 

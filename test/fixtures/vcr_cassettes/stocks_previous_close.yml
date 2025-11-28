@@ -2,35 +2,39 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.polygon.io/v2/aggs/ticker/AAPL/prev?apiKey=<API_KEY>&unadjusted=false
+    uri: https://api.massive.com/v2/aggs/ticker/AAPL/prev?apiKey=<API_KEY>&unadjusted=false
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.3
+      - Faraday v2.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      server:
-      - nginx/1.17.8
       date:
-      - Fri, 01 May 2020 22:38:33 GMT
+      - Fri, 28 Nov 2025 18:25:14 GMT
       content-type:
       - application/json
       content-length:
-      - '197'
+      - '215'
       connection:
-      - close
+      - keep-alive
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+      x-polygon-cluster-name:
+      - polygon-ny5
       x-request-id:
-      - e724e0931ee3c8a94d56f5d1d5720e22, e724e0931ee3c8a94d56f5d1d5720e22
+      - fb72eadefbd8b92bfecc4c35b68b292d
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
-      encoding: UTF-8
-      string: '{"ticker":"AAPL","status":"OK","queryCount":1,"resultsCount":1,"adjusted":true,"results":[{"T":"AAPL","v":4.5755041e+07,"vw":291.6754,"o":289.96,"c":293.8,"h":294.53,"l":288.35,"t":1588276800000}]}'
-    http_version: null
-  recorded_at: Fri, 01 May 2020 22:38:33 GMT
+      encoding: ASCII-8BIT
+      string: '{"ticker":"AAPL","queryCount":1,"resultsCount":1,"adjusted":true,"results":[{"T":"AAPL","v":3.3373748e+07,"vw":278.0461,"o":276.96,"c":277.55,"h":279.53,"l":276.63,"t":1764190800000,"n":538200}],"status":"OK","request_id":"fb72eadefbd8b92bfecc4c35b68b292d","count":1}'
+    http_version:
+  recorded_at: Fri, 28 Nov 2025 18:25:14 GMT
 recorded_with: VCR 5.1.0

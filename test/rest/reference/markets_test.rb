@@ -17,14 +17,14 @@ class ReferenceMarketsTest < Minitest::Test
   def test_status
     VCR.use_cassette("market_status") do
       res = @client.reference.markets.status
-      assert_equal "closed", res.exchanges.nyse
+      assert_equal "extended-hours", res.exchanges.nyse
     end
   end
 
   def test_holidays
     VCR.use_cassette("market_holidays") do
       res = @client.reference.markets.holidays
-      assert_equal "Memorial Day", res.first.name
+      assert_equal "Thanksgiving", res.first.name
     end
   end
 end

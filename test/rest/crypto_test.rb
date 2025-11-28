@@ -10,8 +10,8 @@ class CryptoTest < Minitest::Test
   def test_list
     VCR.use_cassette("cryptos") do
       res = @client.crypto.list
-      assert_equal 22, res.length
-      assert_equal "GDAX", res.first.name
+      assert_equal 5, res.length
+      assert_equal "Coinbase", res.first.name
     end
   end
 

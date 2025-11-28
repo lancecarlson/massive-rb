@@ -166,7 +166,7 @@ module Polygonio
           attribute :o, Types::JSON::Decimal
           attribute :v, Types::JSON::Decimal
         end
-        attribute :last_trade do
+        attribute? :last_trade do
           attribute? :c1, Types::Integer
           attribute? :c2, Types::Integer
           attribute? :c3, Types::Integer
@@ -176,7 +176,7 @@ module Polygonio
           attribute :s, Types::Integer
           attribute :t, Types::Integer
         end
-        attribute :last_quote do
+        attribute? :last_quote do
           attribute :p, Types::JSON::Decimal
           attribute :s, Types::Integer
           attribute? :P, Types::JSON::Decimal

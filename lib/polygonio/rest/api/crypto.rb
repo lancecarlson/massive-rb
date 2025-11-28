@@ -5,10 +5,11 @@ module Polygonio
     class Crypto < PolygonRestHandler
       class CryptoExchange < PolygonResponse
         attribute :id, Types::Integer
-        attribute :type, Types::String
         attribute :market, Types::String
         attribute :name, Types::String
         attribute :url, Types::String
+        attribute? :tier, Types::String
+        attribute? :locale, Types::String
       end
 
       def list

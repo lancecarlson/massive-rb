@@ -9,27 +9,21 @@ module Polygonio
           attribute :name, Types::String
           attribute :market, Types::String
           attribute :locale, Types::String
-          attribute :currency, Types::String
-          attribute :active, Types::Bool
-          attribute :primary_exch?, Types::String
+          attribute? :primary_exchange, Types::String
           attribute? :type, Types::String
-          attribute? :codes do
-            attribute? :cik, Types::String
-            attribute? :figiuid, Types::String
-            attribute? :scfigi, Types::String
-            attribute? :cfigi, Types::String
-            attribute? :figi, Types::String
-          end
-          attribute :updated, Types::JSON::Date
-          attribute :url, Types::String
+          attribute :active, Types::Bool
+          attribute? :currency_name, Types::String
+          attribute? :cik, Types::String
+          attribute? :composite_figi, Types::String
+          attribute? :share_class_figi, Types::String
+          attribute? :last_updated_utc, Types::String
         end
 
         class TickerResponse < PolygonResponse
-          attribute :page, Types::Integer
-          attribute :per_page, Types::Integer
-          attribute :count, Types::Integer
           attribute :status, Types::String
-          attribute :tickers, Types::Array.of(Ticker)
+          attribute :results, Types::Array.of(Ticker)
+          attribute? :next_url, Types::String
+          attribute? :count, Types::Integer
         end
 
         class TickersParameters < Dry::Struct
@@ -45,7 +39,7 @@ module Polygonio
 
         def list(params = {})
           params = TickersParameters[params]
-          res = client.request.get("/v2/reference/tickers", params.to_h)
+          res = client.request.get("/v3/reference/tickers", params.to_h)
           TickerResponse[res.body]
         end
 
@@ -99,24 +93,42 @@ module Polygonio
         end
 
         class NewsResponse < PolygonResponse
-          attribute :symbols, Types::Array.of(Types::String)
-          attribute :title, Types::String
-          attribute :url, Types::String
-          attribute :source, Types::String
-          attribute :summary, Types::String
-          attribute? :image, Types::String
-          attribute :timestamp, Types::JSON::DateTime
-          attribute :keywords, Types::Array.of(Types::String)
+          attribute :status, Types::String
+          attribute :results, Types::Array do
+            attribute? :id, Types::String
+            attribute? :publisher do
+              attribute? :name, Types::String
+              attribute? :homepage_url, Types::String
+              attribute? :logo_url, Types::String
+              attribute? :favicon_url, Types::String
+            end
+            attribute :title, Types::String
+            attribute? :author, Types::String
+            attribute :published_utc, Types::String
+            attribute :article_url, Types::String
+            attribute :tickers, Types::Array.of(Types::String)
+            attribute? :amp_url, Types::String
+            attribute? :image_url, Types::String
+            attribute? :description, Types::String
+            attribute? :keywords, Types::Array.of(Types::String)
+            attribute? :insights, Types::Array do
+              attribute :ticker, Types::String
+              attribute :sentiment, Types::String
+              attribute :sentiment_reasoning, Types::String
+            end
+          end
+          attribute? :count, Types::Integer
+          attribute? :next_url, Types::String
+          attribute? :request_id, Types::String
         end
 
-        def news(symbol, page = 1, perpage = 50)
-          symbol = Types::String[symbol]
-          page = Types::Integer[page]
-          perpage = Types::Integer[perpage]
-          opts = { page: page, perpage: perpage }
+        def news(ticker, limit = 10)
+          ticker = Types::String[ticker]
+          limit = Types::Integer[limit]
+          opts = { ticker: ticker, limit: limit }
 
-          res = client.request.get("/v1/meta/symbols/#{symbol}/news", opts)
-          Types::Array.of(NewsResponse)[res.body]
+          res = client.request.get("/v2/reference/news", opts)
+          NewsResponse[res.body]
         end
       end
     end

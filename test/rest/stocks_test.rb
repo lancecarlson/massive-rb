@@ -70,7 +70,7 @@ class StocksTest < Minitest::Test
     # skip("uncomment to speed up tests")
     VCR.use_cassette("stocks_full_snapshot") do
       res = @client.stocks.full_snapshot
-      assert_equal "NMCI", res.tickers.first.ticker
+      assert_equal "FRBA", res.tickers.first.ticker
     end
   end
 
@@ -84,7 +84,7 @@ class StocksTest < Minitest::Test
   def test_snapshot_gainers_losers
     VCR.use_cassette("stocks_snapshot_gainers_losers") do
       res = @client.stocks.snapshot_gainers_losers("gainers")
-      assert_equal "NTG", res.tickers.first.ticker
+      assert_equal "SMXWW", res.tickers.first.ticker
     end
   end
 

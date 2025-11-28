@@ -12,16 +12,10 @@ class ReferenceTickersTest < Minitest::Test
   def test_list
     VCR.use_cassette("tickers") do
       res = @client.reference.tickers.list
-      assert_equal 1, res.page
-      assert_equal 50, res.per_page
-      assert_equal 122_669, res.count
-      assert_equal 50, res.tickers.length
-      assert_equal "A", res.tickers.first.ticker
-    end
-
-    VCR.use_cassette("tickers_2") do
-      res = @client.reference.tickers.list(page: 2)
-      assert_equal 2, res.page
+      assert_equal "OK", res.status
+      assert_equal 100, res.results.length
+      assert_equal "A", res.results.first.ticker
+      assert_equal "Agilent Technologies Inc.", res.results.first.name
     end
   end
 
@@ -41,8 +35,9 @@ class ReferenceTickersTest < Minitest::Test
 
   def test_news
     VCR.use_cassette("ticker_news") do
-      res = @client.reference.tickers.news("AAPL", 4, 49)
-      assert_equal 49, res.length
+      res = @client.reference.tickers.news("AAPL", 10)
+      assert_equal "OK", res.status
+      assert res.results.length > 0
     end
   end
 end
